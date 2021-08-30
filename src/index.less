@@ -1,0 +1,57 @@
+@bgColor: #b7d4a8;
+@body: #5A8353;
+
+.main {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  box-sizing: border-box;
+  width: 460px;
+  height: 525px;
+  border: 5px solid @body;
+  border-radius: 10px;
+  background-color: @bgColor;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  .stage {
+    width: 425px;
+    height: 425px;
+    border: 2px solid @body;
+    margin: 18px auto;
+    position: relative;
+    .snake {
+      & > div {
+        position: absolute;
+        width: 25px;
+        height: 25px;
+        border: 2px solid @bgColor;
+        box-sizing: border-box;
+        content: url('./img/body.svg');
+        &:first-child {
+          border-radius: 0;
+          background-color: transparent;
+          content: url('./img/head.svg');
+        }
+      }
+    }
+    .food {
+      width: 25px;
+      height: 25px;
+      position: absolute;
+      border: 2px solid @bgColor;
+      box-sizing: border-box;
+      content: url('./img/food.svg');
+    }
+  }
+  .score-panel {
+    width: 316px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}
